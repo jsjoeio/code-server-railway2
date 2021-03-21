@@ -14,3 +14,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Use our custom entrypoint script first
 COPY railway-entrypoint.sh /usr/bin/railway-entrypoint.sh
 ENTRYPOINT ["/usr/bin/railway-entrypoint.sh"]
+
+# Install NodeJS
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
