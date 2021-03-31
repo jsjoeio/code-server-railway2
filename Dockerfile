@@ -1,4 +1,4 @@
-FROM codercom/code-server:latest
+FROM codercom/code-server:3.9.2
 
 USER coder
 
