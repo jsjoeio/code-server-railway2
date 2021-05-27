@@ -24,7 +24,10 @@ RUN sudo apt install -y vim
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 RUN sudo apt update
-RUN sudo apt install -y yarn
 RUN yarn --version
 
-# Wooo - doing this to trigger rebuild
+# Install Deno and dependencies
+RUN sudo apt install -y zip unzip
+RUN curl -fsSL https://deno.land/x/install/install.sh | sh
+RUN export DENO_INSTALL="/home/coder/.deno"
+RUN export PATH="$DENO_INSTALL/bin:$PATH"
