@@ -24,7 +24,8 @@ RUN sudo apt install -y vim
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - 
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 RUN sudo apt update
-RUN yarn --version
+# Was causing issues. commenting out for now
+# RUN yarn --version
 
 # Install Deno and dependencies
 RUN sudo apt install -y zip unzip
